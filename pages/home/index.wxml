@@ -1,0 +1,42 @@
+<view class="menu">
+  <scroll-view scroll-x="true" class="top-nav">
+    <view bindtap="toFilm" class="top-btn {{film}}">电影</view>
+    <view bindtap="toTelv" class="top-btn {{telv}}">电视剧</view>
+  </scroll-view>
+</view>
+<scroll-view scroll-y="true" class="content">
+
+  <view class="col3">
+    <view class="col3-h">
+      <text style="font-size:14px;">豆瓣热门</text>
+      <navigator url='' bindtap='toMore' style="font-size:14px;float:right;color:#00BB00;">更多 ></navigator>
+    </view>
+    <scroll-view scroll-x="true" class="col3-img-list">
+      <view wx:key='loopFilms' wx:for="{{films}}" wx:for-index="index" wx:for-item="item" class="col3-img" bindtap='toDetail'>
+        <image class="c3-actual-img" mode="scaleToFill" alt="{{item.title}}" src="{{item.poster}}" />
+      </view>
+    </scroll-view>
+  </view>
+  <view class="col3">
+    <view class="col3-h">
+      <text style="font-size:14px;">豆瓣榜单</text>
+      <navigator url='' bindtap='toMore' style="font-size:14px;float:right;color:#00BB00">更多 ></navigator>
+    </view>
+    <scroll-view scroll-x="true" class="col3-img-list">
+      <view wx:key='loopFilms' wx:for="{{films}}" wx:for-index="index" wx:for-item="item" class="col3-img" bindtap='toLine'>
+        <image class="c3-actual-img" mode="scaleToFill" alt="{{item.title}}" src="{{item.poster}}" />
+      </view>
+    </scroll-view>
+  </view>
+  <view class="col3">
+    <view class="col3-h">
+      <text style="font-size:14px;">新片速递</text>
+      <navigator url='' bindtap='toMore' style="font-size:14px;float:right;color:#00BB00;">更多 ></navigator>
+    </view>
+    <scroll-view scroll-x="true" class="col3-img-list">
+      <view wx:key='loopFilms' wx:for="{{films}}" wx:for-index="index" wx:for-item="item" class="col3-img" bindtap='toDetail'>
+        <image class="c3-actual-img" mode="scaleToFill" alt="{{item.title}}" src="{{item.poster}}" />
+      </view>
+    </scroll-view>
+  </view>
+</scroll-view>
